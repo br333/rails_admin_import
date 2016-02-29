@@ -83,7 +83,7 @@ module RailsAdminImport
 
       perform_model_callback(object, :before_import_save, record)
 
-      if object.save
+      if object.save(:validate => false)
         report_success(object, action)
         perform_model_callback(object, :after_import_save, record)
       else
