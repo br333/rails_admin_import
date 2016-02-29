@@ -70,7 +70,7 @@ module RailsAdminImport
       end
 
       object = find_or_create_object(record, update_lookup)
-      action = object.new_record? ? :save : :update
+      action = object.new_record? ? :create : :update
 
       begin
         import_single_association_data(object, record)
